@@ -29,5 +29,8 @@ public class Solution {
 
     public static void main(String[] args) {
         System.out.println(new Solution().rectCover(25));
+
+        String s = Integer.toBinaryString(-9);
+        System.out.println(s);
     }
 }
