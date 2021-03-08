@@ -24,6 +24,7 @@ public class Solution {
 
     public TreeNode reConstructBinaryTree(int [] pre,int [] in) {
 
+
         if (pre.length == 0) return null;
 
         TreeNode node = new TreeNode(pre[0]);
