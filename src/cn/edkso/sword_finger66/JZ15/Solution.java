@@ -24,17 +24,27 @@ class ListNode { int val;
 public class Solution {
     public ListNode ReverseList(ListNode head) {
 
-        Stack<ListNode> stack = new Stack<>();
+        ListNode pre = null;
+        ListNode cur = null;
         while (head != null){
-            stack.add(head);
-            head = head.next;
-        }
 
-        ListNode newHead = stack.pop();
-        while (!stack.isEmpty()){
-            newHead.next = stack.pop();
+            cur = head.next;
+            head.next = pre;
+            pre=head;
+
+            head = cur;
         }
-        return newHead;
+        return pre;
+    }
+
+
+    public static void main(String[] args) {
+        ListNode l1 = new ListNode(1);
+        ListNode l2 = new ListNode(2);
+        ListNode l3 = new ListNode(3);
+        l1.next = l2;
+        l2.next = l3;
+        new Solution().ReverseList(l1);
     }
 
 }
